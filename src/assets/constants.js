@@ -31,3 +31,9 @@ I can even do lists properly, like this one of cowboy words
 1. tarnation
 2. horse
 `;
+
+export function dateText() {
+  const d = new Date();
+  return `${d.getFullYear()}-${d.getMonth() < 10 &&
+    "0"}${d.getMonth()}-${d.getDate() < 10 && "0"}${d.getDate()}`;
+}

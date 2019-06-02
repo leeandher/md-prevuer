@@ -1,14 +1,16 @@
 <template>
   <div class="edit-pane pane">
     <textarea id="editor" v-model="rawInput" @keyup="$emit('edit', rawInput)" rows="30"/>
-    <FunctionButton text="Export Markdown"/>
+    <FunctionButton text="Export Markdown" :func="exportMarkdown"/>
   </div>
 </template>
 
 <script>
-import { defaultText } from "../assets/constants";
+import { saveAs } from "file-saver";
 
 import FunctionButton from "./FunctionButton";
+
+import { dateText, defaultText } from "../assets/constants";
 
 export default {
   name: "EditPane",
@@ -19,6 +21,14 @@ export default {
     return {
       rawInput: defaultText
     };
+  },
+  methods: {
+    exportMarkdown: function() {
+      const markdownBlob = new Blob([this.rawInput], {
+        type: "text/plain;charset=utf-8"
+      });
+      saveAs(markdownBlob, `${dateText()}_prevue.md`);
+    }
   }
 };
 </script>

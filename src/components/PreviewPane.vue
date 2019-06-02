@@ -1,12 +1,16 @@
 <template>
   <div class="preview-pane pane">
     <div class="preview" v-html="html"/>
-    <FunctionButton text="Export HTML"/>
+    <FunctionButton text="Export HTML" :func="exportHtml"/>
   </div>
 </template>
 
 <script>
+import { saveAs } from "file-saver";
+
 import FunctionButton from "./FunctionButton";
+
+import { dateText } from "../assets/constants";
 
 export default {
   name: "PreviewPane",
@@ -15,6 +19,14 @@ export default {
   },
   props: {
     html: String
+  },
+  methods: {
+    exportHtml: function() {
+      const markdownBlob = new Blob([this.html], {
+        type: "text/plain;charset=utf-8"
+      });
+      saveAs(markdownBlob, `${dateText()}_prevue.html`);
+    }
   }
 };
 </script>
