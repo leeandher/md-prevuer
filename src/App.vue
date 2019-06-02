@@ -1,8 +1,8 @@
 <template>
   <div id="app">
     <div id="content-panel">
-      <PreviewPane html="<p>Hello</p><h1>WORLD</h1>" css/>
-      <EditPane/>
+      <EditPane @edit="handleEdit"/>
+      <PreviewPane :html="rawHtml" css/>
     </div>
     <div id="function-panel"></div>
   </div>
@@ -20,6 +20,17 @@ export default {
     PreviewPane,
     EditPane,
     FunctionButton
+  },
+  data() {
+    return {
+      rawHtml: EditPane.data().rawInput
+    };
+  },
+  methods: {
+    handleEdit(newValue) {
+      console.log(newValue);
+      this.rawHtml = newValue;
+    }
   }
 };
 </script>
@@ -35,6 +46,8 @@ html {
 body {
   margin: 0;
   padding: 0;
+  position: relative;
+  background: var(--light);
 }
 #app {
   font-family: "Avenir", Helvetica, Arial, sans-serif;
@@ -42,12 +55,19 @@ body {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: var(--dark);
-  background: var(--light);
-  height: 100vh;
 }
 #content-panel {
   display: flex;
-  padding: 2rem;
-  background: ;
+  margin: 2rem;
+  flex-flow: row wrap;
+}
+.pane {
+  border-radius: 0.5rem;
+  border: 2px solid var(--dark);
+  box-shadow: var(--dark) 0 2px 3px;
+  max-width: 640px;
+  margin: 1rem;
+  flex: 1;
+  flex-basis: 275px;
 }
 </style>

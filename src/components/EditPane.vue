@@ -1,20 +1,35 @@
 <template>
-  <div class="edit-pane">
-    <div class="edit-content" v-html="html" :style="css"/>
+  <div class="edit-pane pane">
+    <textarea name="editor" v-model="rawInput" @keyup="$emit('edit', rawInput)" rows="30"/>
   </div>
 </template>
 
 <script>
 export default {
-  name: "EditPane"
+  name: "EditPane",
+  data: function() {
+    return {
+      rawInput: "Testing"
+    };
+  }
 };
 </script>
 
 <style scoped>
-.edit-pane {
-  max-width: 640px;
-  margin: 2rem;
-  border: 2px solid red;
+textarea {
+  border: 0;
+  background: transparent;
+  outline: 0;
+  resize: vertical;
+  padding: 0.5rem;
+  width: calc(100% - 1rem);
+}
+textarea::-webkit-scrollbar {
+  width: 1rem;
+  border-radius: 1.25rem;
+}
+textarea::-webkit-scrollbar-thumb {
+  background: var(--dark);
 }
 </style>
 

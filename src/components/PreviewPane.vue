@@ -1,5 +1,5 @@
 <template>
-  <div class="preview-pane">
+  <div class="preview-pane pane">
     <div class="preview-content" v-html="html" :style="css"/>
   </div>
 </template>
@@ -16,7 +16,10 @@ export default {
 
 <style scoped>
 .preview-pane {
-  max-width: 640px;
+  padding: 1.5rem;
+}
+.preview-content {
+  font-size: 15px;
 }
 </style>
 
