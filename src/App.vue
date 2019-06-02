@@ -9,6 +9,8 @@
 </template>
 
 <script>
+import marked from "marked";
+
 import HelloWorld from "./components/HelloWorld.vue";
 import PreviewPane from "./components/PreviewPane.vue";
 import EditPane from "./components/EditPane.vue";
@@ -23,13 +25,12 @@ export default {
   },
   data() {
     return {
-      rawHtml: EditPane.data().rawInput
+      rawHtml: marked(EditPane.data().rawInput)
     };
   },
   methods: {
-    handleEdit(newValue) {
-      console.log(newValue);
-      this.rawHtml = newValue;
+    handleEdit(rawInput) {
+      this.rawHtml = marked(rawInput);
     }
   }
 };

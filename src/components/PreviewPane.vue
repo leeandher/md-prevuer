@@ -20,6 +20,7 @@ export default {
 }
 .preview-content {
   font-size: 15px;
+  text-align: left;
 }
 </style>
 

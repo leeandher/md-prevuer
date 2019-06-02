@@ -9,7 +9,24 @@ export default {
   name: "EditPane",
   data: function() {
     return {
-      rawInput: "Testing"
+      rawInput: `# Marked
+
+## This is actually fucking working
+
+#### What the actual fuck
+
+>That's awesome
+
+\`code\`
+
+thats wack and a half
+
+**BOLD**
+
+
+**ITALICS**
+      
+      `
     };
   }
 };
