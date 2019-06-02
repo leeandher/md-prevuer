@@ -5,7 +5,6 @@
       <EditPane @edit="handleEdit"/>
       <PreviewPane :html="rawHtml"/>
     </div>
-    <div id="function-panel"></div>
   </div>
 </template>
 
@@ -14,14 +13,12 @@ import marked from "marked";
 
 import PreviewPane from "./components/PreviewPane.vue";
 import EditPane from "./components/EditPane.vue";
-import FunctionButton from "./components/FunctionButton.vue";
 
 export default {
   name: "app",
   components: {
     PreviewPane,
-    EditPane,
-    FunctionButton
+    EditPane
   },
   data() {
     return {
@@ -71,8 +68,8 @@ body {
 }
 .pane {
   border-radius: 0.5rem;
-  border: 2px solid var(--dark);
-  box-shadow: var(--green) 0 2px 5px;
+  border: 3px solid var(--dark);
+  box-shadow: var(--green) 0 0 0 3px;
   max-width: 640px;
   margin: 1rem;
   flex: 1;
