@@ -10,7 +10,11 @@ import { saveAs } from "file-saver";
 
 import FunctionButton from "./FunctionButton";
 
-import { dateText } from "../assets/constants";
+import {
+  dateText,
+  htmlDownloadStart,
+  htmlDownloadEnd
+} from "../assets/constants";
 
 export default {
   name: "PreviewPane",
@@ -22,9 +26,12 @@ export default {
   },
   methods: {
     exportHtml: function() {
-      const markdownBlob = new Blob([this.html], {
-        type: "text/plain;charset=utf-8"
-      });
+      const markdownBlob = new Blob(
+        [htmlDownloadStart, this.html, htmlDownloadEnd],
+        {
+          type: "text/plain;charset=utf-8"
+        }
+      );
       saveAs(markdownBlob, `${dateText()}_prevue.html`);
     }
   }

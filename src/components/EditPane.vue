@@ -10,7 +10,7 @@ import { saveAs } from "file-saver";
 
 import FunctionButton from "./FunctionButton";
 
-import { dateText, defaultText } from "../assets/constants";
+import { dateText, editorDefaultText } from "../assets/constants";
 
 export default {
   name: "EditPane",
@@ -19,7 +19,7 @@ export default {
   },
   data: function() {
     return {
-      rawInput: defaultText
+      rawInput: editorDefaultText
     };
   },
   methods: {

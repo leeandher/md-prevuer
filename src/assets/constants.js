@@ -1,4 +1,4 @@
-export const defaultText = `     
+export const editorDefaultText = `     
 # Heading 1
 ## Heading 2
 ### and so on
@@ -30,6 +30,74 @@ I can even do lists properly, like this one of cowboy words
 - ain't
 1. tarnation
 2. horse
+`;
+export const htmlDownloadStart = `
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <title>reMarked</title>
+  </head>
+  <body>
+`;
+
+export const htmlDownloadEnd = `
+</body>
+<style>
+  :root {
+    --light: rgb(248, 248, 248);
+    --dark: rgb(34, 48, 62);
+    --green: rgb(65, 184, 131);
+    --honeydew: rgb(226, 245, 236);
+  }
+  html {
+    font-size: 15px;
+    font-family: 'Avenir', Helvetica, Arial, sans-serif;
+    background: var(--honeydew);
+  }
+  body {
+    margin: 1.5rem auto;
+    max-width: 800px;
+    padding: 0;
+    position: relative;
+    background: var(--light);
+    border: 2px solid var(--dark);
+    padding: 1rem;
+    border-radius: 1rem;
+  }
+  a {
+    color: var(--green);
+  }
+  blockquote {
+    margin: 0.5rem 1.5rem;
+    line-height: 1;
+    padding: 0.1rem 1rem;
+    border-radius: 0.25rem;
+    border-left: 5px solid var(--green);
+    background: var(--honeydew);
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  }
+  code {
+    background: var(--honeydew);
+    font-family: Consolas, 'Lucida Console', Monaco, monospace;
+  }
+  pre {
+    background: var(--dark);
+    border-radius: 0.25rem;
+    padding: 0.5rem;
+  }
+  pre code {
+    background: transparent;
+    color: var(--light);
+  }
+  hr {
+    height: 0px;
+    border: 1px solid var(--green);
+  }
+</style>
+</html>
 `;
 
 export function dateText() {
