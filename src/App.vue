@@ -1,5 +1,6 @@
 <template>
   <div id="app">
+    <img id="logo" src="./assets/app-logo.png" height="60px">
     <div id="content-panel">
       <EditPane @edit="handleEdit"/>
       <PreviewPane :html="rawHtml"/>
@@ -51,6 +52,10 @@ body {
   position: relative;
   background: var(--light);
 }
+#logo {
+  display: block;
+  margin: 2rem auto 0;
+}
 #app {
   font-family: "Avenir", Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -66,8 +71,8 @@ body {
 }
 .pane {
   border-radius: 0.5rem;
-  border: 2px solid var(--dark);
-  box-shadow: var(--dark) 0 2px 3px;
+  border: 1px solid var(--dark);
+  box-shadow: var(--green) 0 2px 5px;
   max-width: 640px;
   margin: 1rem;
   flex: 1;
@@ -87,7 +92,6 @@ blockquote {
 }
 code {
   background: var(--honeydew);
-  padding: 0 0.5rem;
   font-family: Consolas, "Lucida Console", Monaco, monospace;
 }
 pre {

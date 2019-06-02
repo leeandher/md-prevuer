@@ -10,10 +10,7 @@ export default {
   data: function() {
     return {
       rawInput: `     
-
-
-# Markdown Prev
-
+# Heading 1
 ## Heading 2
 ### Heading 3
 #### Heading 4
@@ -22,13 +19,13 @@ export default {
 
 ---
 
-**Bold Text**
+**This is some bold text if you're trying to be \`strong\`**
 
-_Italics Text_
+_This is some italicized text if you wanna \`em\`phasize anything_
 
-> This is a quote
+> A fancy quote would go here
 
-Some basic inline \`code\` with more text
+Some \`basic inline code\` with more text
 
 \`\`\`
 if (moreCode) {
@@ -37,7 +34,7 @@ if (moreCode) {
 }
 \`\`\`
 
-[I'm an inline-style link](https://www.leander.xyz)
+[I'm an inline link, check me out!](https://www.leander.xyz)
       `
     };
   }
