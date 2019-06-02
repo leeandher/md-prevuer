@@ -9,23 +9,35 @@ export default {
   name: "EditPane",
   data: function() {
     return {
-      rawInput: `# Marked
-
-## This is actually fucking working
-
-#### What the actual fuck
-
->That's awesome
-
-\`code\`
-
-thats wack and a half
-
-**BOLD**
+      rawInput: `     
 
 
-**ITALICS**
-      
+# Markdown Prev
+
+## Heading 2
+### Heading 3
+#### Heading 4
+##### Heading 5
+###### Heading 6
+
+---
+
+**Bold Text**
+
+_Italics Text_
+
+> This is a quote
+
+Some basic inline \`code\` with more text
+
+\`\`\`
+if (moreCode) {
+  //put it here
+  //multiline
+}
+\`\`\`
+
+[I'm an inline-style link](https://www.leander.xyz)
       `
     };
   }
@@ -40,6 +52,7 @@ textarea {
   resize: vertical;
   padding: 0.5rem;
   width: calc(100% - 1rem);
+  height: calc(100% - 1rem);
 }
 textarea::-webkit-scrollbar {
   width: 1rem;
