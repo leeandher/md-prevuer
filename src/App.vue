@@ -71,12 +71,25 @@ body {
 }
 .pane {
   border-radius: 0.5rem;
-  border: 1px solid var(--dark);
+  border: 2px solid var(--dark);
   box-shadow: var(--green) 0 2px 5px;
   max-width: 640px;
   margin: 1rem;
   flex: 1;
   flex-basis: 275px;
+  position: relative;
+}
+.pane:after {
+  font-style: italic;
+  padding: 2px 8px;
+  border-radius: 0 0 0 0.5rem;
+  color: var(--light);
+  background: var(--dark);
+  font-weight: bold;
+  font-size: 16px;
+  position: absolute;
+  right: 0;
+  top: 0;
 }
 a {
   color: var(--green);

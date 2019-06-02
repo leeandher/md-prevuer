@@ -1,6 +1,6 @@
 <template>
   <div class="preview-pane pane">
-    <div class="preview-content" v-html="html" :style="css"/>
+    <div class="preview" v-html="html"/>
   </div>
 </template>
 
@@ -8,8 +8,7 @@
 export default {
   name: "PreviewPane",
   props: {
-    html: String,
-    css: String
+    html: String
   }
 };
 </script>
@@ -18,7 +17,10 @@ export default {
 .preview-pane {
   padding: 1.5rem;
 }
-.preview-content {
+.preview-pane:after {
+  content: "PREVIEW";
+}
+.preview {
   font-size: 15px;
   text-align: left;
 }
