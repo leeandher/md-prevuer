@@ -117,4 +117,20 @@ hr {
   height: 0px;
   border: 1px solid var(--green);
 }
+table {
+  border-collapse: collapse;
+}
+table,
+th,
+td {
+  border: 2px solid var(--green);
+  padding: 0.25rem;
+}
+tr:nth-child(even) {
+  background: var(--honeydew);
+}
+th {
+  background: var(--green);
+  color: var(--light);
+}
 </style>

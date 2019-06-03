@@ -30,6 +30,15 @@ I can even do lists properly, like this one of cowboy words
 - ain't
 1. tarnation
 2. horse
+
+I can even handle some big ol' tables
+
+| Good | Bad                                     | 
+| ---- | --------------------------------------- |
+| Dogs | Death                                   |
+| Love | Debt                                    |
+| GoT  | Getting your foot run over by a tractor | 
+
 `;
 export const htmlDownloadStart = `
 <!DOCTYPE html>
@@ -95,6 +104,22 @@ export const htmlDownloadEnd = `
   hr {
     height: 0px;
     border: 1px solid var(--green);
+  }
+  table {
+    border-collapse: collapse;
+  }
+  table,
+  th,
+  td {
+    border: 2px solid var(--green);
+    padding: 0.25rem;
+  }
+  tr:nth-child(even) {
+    background: var(--honeydew);
+  }
+  th {
+    background: var(--green);
+    color: var(--light);
   }
 </style>
 </html>
